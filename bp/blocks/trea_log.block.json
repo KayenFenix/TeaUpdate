@@ -1,0 +1,144 @@
+{
+    "format_version": "1.19.60",
+    "minecraft:block": {
+        "description": {
+            "identifier": "tu:tea_log",
+            "menu_category": {
+                "category": "nature",
+                "group": "itemGroup.name.log"
+            },
+            "properties": {
+                "tu:block_rotation": [0, 1, 2]
+            }
+        },
+        "components": {
+            "tag:wood": {},
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 1.5
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 2
+            },
+            "minecraft:flammable": {    
+                "catch_chance_modifier": 5,
+                "destroy_chance_modifier": 20
+            },
+            "minecraft:map_color": "#FFFFFF",
+            "minecraft:material_instances":{
+                "*":{
+                    "texture":"tea_log_side",
+                    "render_method":"opaque",
+                    "ambient_occlusion":false,
+                    "face_dimming":true
+                },
+                "up":{
+                    "texture":"tea_log_top"
+                },
+                "down":{
+                    "texture":"tea_log_top"
+                }
+            },
+            "minecraft:unit_cube":{},
+            "minecraft:on_player_placing":{
+                "event":"tu:update_rotation"
+            },
+            "minecraft:on_interact": {
+                "event": "make_stripped"
+            }
+        },
+        "permutations":[
+            {
+                "condition":"query.block_property('tu:block_rotation') == 0",
+                "components":{
+                    "minecraft:rotation":[
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            },
+            {
+                "condition":"query.block_property('tu:block_rotation') == 1",
+                "components":{
+                    "minecraft:rotation":[
+                        90,
+                        0,
+                        0
+                    ]
+                }
+            },
+            {
+                "condition":"query.block_property('tu:block_rotation') == 2",
+                "components":{
+                    "minecraft:rotation":[
+                        0,
+                        0,
+                        90
+                    ]
+                }
+            }
+        ],
+        "events":{
+            "make_stripped": {
+                "sequence": [
+                    {
+                        "condition": "q.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:stone_axe')",
+                        "trigger": {
+                            "event": "set_stripped",
+                            "target": "other"
+                        }
+                    },
+                    {
+                        "condition": "q.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:iron_axe')",
+                        "trigger": {
+                            "event": "set_stripped",
+                            "target": "other"
+                        }
+                    },
+                    {
+                        "condition": "q.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:wooden_axe')",
+                        "trigger": {
+                            "event": "set_stripped",
+                            "target": "other"
+                        }
+                    },
+                    {
+                        "condition": "q.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:netherite_axe')",
+                        "trigger": {
+                            "event": "set_stripped",
+                            "target": "other"
+                        }
+                    },
+                    {
+                        "condition": "q.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:diamond_axe')",
+                        "trigger": {
+                            "event": "set_stripped",
+                            "target": "other"
+                        }
+                    },
+                    {
+                        "condition": "q.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:golden_axe')",
+                        "trigger": {
+                            "event": "set_stripped",
+                            "target": "other"
+                        }
+                    }
+                ]
+            },
+            "set_stripped":{
+                "set_block": "tu:tea_stripped_log"
+            },
+            "tu:update_rotation":{
+                "set_block_property":{
+                    "tu:block_rotation":"math.floor(query.block_face/2)"
+                }
+            },
+            "tu:stripped_log": {
+                "set_block_at_pos": {
+                    "block_type": "tu:tea_stripped_log",
+                    "block_offset": [0, 0, 0]
+                }
+            }
+        }
+    }
+}

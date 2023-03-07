@@ -1,0 +1,38 @@
+{
+	"resource_pack_name": "wiki",
+	"texture_name": "atlas.terrain",
+	"padding": 8,
+	"num_mip_levels": 4,
+	"texture_data": {
+		"tea_planks": {
+			"textures": "textures/blocks/tea_planks"
+		},
+		"tea_log_side": {
+			"textures": "textures/blocks/tea_log_side"
+		},
+		"tea_log_top": {
+			"textures": "textures/blocks/tea_log_top"
+		},
+		"tea_stripped_log_side": {
+			"textures": "textures/blocks/tea_stripped_log_side"
+		},
+		"tea_stripped_log_top": {
+			"textures": "textures/blocks/tea_stripped_log_top"
+		},
+		"tea_leaves": {
+			"textures": "textures/blocks/tea_leaves"
+		},
+		"tea_snow_leaves": {
+			"textures": "textures/blocks/tea_snow_leaves"
+		},
+		"tea_planks1": {
+			"textures": "textures/blocks/tea_planks"
+		},
+		"tea_planks2": {
+			"textures": "textures/blocks/tea_planks"
+		},
+		"tea_planks3": {
+			"textures": "textures/blocks/tea_planks"
+		}
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Tea Update",
+        "description": "rp",
+        "min_engine_version": [
+            1,
+            19,
+            0
+        ],
+        "uuid": "3cc882c2-44ab-4790-ba87-17d4eff269df",
+        "version": [
+            1,
+            0,
+            0
+        ]
+    },
+    "modules": [
+        {
+            "version": [
+                1,
+                0,
+                0
+            ],
+            "type": "resources",
+            "uuid": "4bf6fc1e-0db6-4384-a40e-d7c84cac2cdf"
+        }
+    ]
+}

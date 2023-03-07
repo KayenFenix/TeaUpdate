@@ -1,0 +1,31 @@
+{
+    "format_version": "1.19.40",
+    "minecraft:block": {
+        "description": {
+            "identifier": "tu:tea_planks",
+            "menu_category": {
+                "category": "nature",
+                "group": "itemGroup.name.planks"
+            }
+        },
+        "components": {
+            "tag:wood": {},
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 1
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 1
+            },
+            "minecraft:flammable": {
+                "seconds_to_destroy": 5
+            },
+            "minecraft:map_color": "#FFFFFF",
+            "minecraft:unit_cube": {},
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "tea_planks"
+                }
+            }
+        }
+    }
+}
